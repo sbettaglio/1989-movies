@@ -18,8 +18,11 @@ class App extends React.Component {
       })
       .then(data => {
         console.log(data)
+
         this.setState({
-          movies: data.results,
+          movies: data.results.sort(
+            (a, b) => Date.parse(a.release_date) - Date.parse(b.release_date)
+          ),
         })
       })
   }
