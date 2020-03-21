@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import HelloWorld from './components/HelloWorld'
+import Movies from './components/Movies'
 
 class App extends React.Component {
   state = {
@@ -30,12 +31,12 @@ class App extends React.Component {
         <ul>
           {this.state.movies.map(movie => {
             return (
-              <li key={movie.id}>
-                <h2>{movie.title}</h2>
-                <p>
-                  <span>Overview:</span> {movie.overview}
-                </p>
-              </li>
+              <Movies
+                id={movie.id}
+                title={movie.title}
+                poster_path={movie.poster_path}
+                overview={movie.overview}
+              />
             )
           })}
         </ul>
