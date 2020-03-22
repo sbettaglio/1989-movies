@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import HelloWorld from './components/HelloWorld'
 import Movies from './components/Movies'
 
-class App extends React.Component {
+class App extends Component {
   state = {
     movies: [],
+    search: '',
   }
 
   componentDidMount() {
@@ -26,16 +26,28 @@ class App extends React.Component {
         })
       })
   }
+  onChange = e => {
+    this.setState({
+      search: e.target.value,
+      movies: this.state.movies.filter(movie => {
+        return (
+          movie.title.toLowerCase().indexOf(this.state.search.toLowerCase()) !==
+          -1
+        )
+      }),
+    })
+  }
 
   render() {
     return (
       <>
         <h1>1989 Movies</h1>
+        <input label="Movie Filter" icon="search" onChange={this.onChange} />
         <ul>
           {this.state.movies.map(movie => {
             return (
               <Movies
-                id={movie.id}
+                key={movie.id}
                 title={movie.title}
                 poster_path={movie.poster_path}
                 overview={movie.overview}
