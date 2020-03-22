@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Movies from './components/Movies'
+import { format } from 'date-fns'
 
 class App extends Component {
   state = {
@@ -58,6 +59,7 @@ class App extends Component {
                 title={movie.title}
                 poster_path={movie.poster_path}
                 overview={movie.overview}
+                release_date={format(new Date(movie.release_date), 'MMM do')}
               />
             )
           })}
