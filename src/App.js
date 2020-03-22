@@ -43,7 +43,7 @@ class App extends Component {
     return (
       <>
         <h1>1989 Movies</h1>
-        <form>
+        <form className="search-bar">
           Search by Movie Title:
           <input
             label="Movie Filter"

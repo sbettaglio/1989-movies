@@ -19,9 +19,25 @@ h1 {
   font-family: 'Orbitron', sans-serif;
   font-weight: lighter;
 }
+ul {
+  display: grid;
+  grid-template-columns: 100%;
+  padding: initial;
+}
 
 li {
   list-style: none;
+  border: solid 1px rgb(34, 255, 200);
+  margin: 2rem;
+  border-radius: 20px;
+}
+li section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+li section img {
+  width: 50%;
 }
 
 section {
@@ -39,5 +55,29 @@ h2 {
   color: rgb(33, 255, 207);
   font-family: 'Orbitron', sans-serif;
   font-weight: lighter;
-  ;
+  text-align: center;
+}
+.search-bar {
+  display: flex;
+  justify-content: center;
+}
+.search-bar input {
+  margin-left: 1rem;
+  padding-right: 1rem;
+}
+.date-paragraph {
+  margin-top: 0;
+  padding-top: 0;
+}
+@media (min-width: 768px) {
+  ul {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+}
+@media (min-width: 1200px) {
+  ul {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+  }
 }

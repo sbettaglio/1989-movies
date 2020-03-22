@@ -13,7 +13,7 @@ class Movies extends Component {
             <p>
               <span>Overview:</span> {this.props.overview}
             </p>
-            <p>
+            <p className="date-paragraph">
               <span>Release date:</span> {this.props.release_date}
             </p>
           </aside>
