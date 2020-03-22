@@ -26,7 +26,7 @@ class App extends Component {
         })
       })
   }
-  onChange = e => {
+  titleSearch = e => {
     this.setState({
       search: e.target.value,
       movies: this.state.movies.filter(movie => {
@@ -42,7 +42,14 @@ class App extends Component {
     return (
       <>
         <h1>1989 Movies</h1>
-        <input label="Movie Filter" icon="search" onChange={this.onChange} />
+        <form>
+          Search by Movie Title:
+          <input
+            label="Movie Filter"
+            icon="search"
+            onChange={this.titleSearch}
+          />
+        </form>
         <ul>
           {this.state.movies.map(movie => {
             return (
